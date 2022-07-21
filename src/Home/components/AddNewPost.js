@@ -9,7 +9,7 @@ import { addNewPost, updatePost } from "../../api";
 const AddNewPost = ({ isUpdate, id }) => {
   const toast = useToast();
   const cache = useQueryClient();
-  const { isLoading, data, mutateAsync } = useMutation(
+  const { isLoading, mutateAsync } = useMutation(
     isUpdate ? "updatePost" : "addNewPost",
     isUpdate ? updatePost : addNewPost,
     {
